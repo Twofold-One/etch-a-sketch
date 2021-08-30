@@ -13,7 +13,7 @@ function multiDivGrid() {
         divContainer.appendChild(divElement);
     }
 
-    for (i = 0; i < 256; i++) {
+    for (i = 0; i < 1024; i++) {
         divGrid();
     }
 }
@@ -35,10 +35,15 @@ function resetAndAlign() {
     //func for user prompt for grid align
     function gridAlignPrompt() {
         const userGridPrompt = prompt('What number of squares per side for the new grid do you want?');
-
-
-        //userMultiDivGrid
-        function userMultiDivGrid(userGrid) {
+        
+        //prompt input options
+        if (!Number(userGridPrompt)) {
+            alert('Not a number!');
+        } else if (userGridPrompt > 100) {
+            alert('Max squares per side for the new grid is 100')
+        } else {
+            //userMultiDivGrid
+            function userMultiDivGrid(userGrid) {
             const divContainer = document.querySelector('#container');
 
             //func delete old grid
@@ -64,9 +69,9 @@ function resetAndAlign() {
             divContainer.setAttribute(`style`,
             `grid-template-columns: repeat(${userGridPrompt}, 1fr);
             grid-template-rows: repeat(${userGridPrompt}, 1fr);` );
-        }
-       
+            }      
         userMultiDivGrid(userGridPrompt);
+        }
     }
 
     resetButton.addEventListener('click', function(e) {
