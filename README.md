@@ -1,1 +1,1 @@
-The Odin Project: etch-a-scetch
+The Odin Project: etch-a-sketch
