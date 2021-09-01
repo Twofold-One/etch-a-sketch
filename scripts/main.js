@@ -13,7 +13,7 @@ function multiDivGrid() {
         divContainer.appendChild(divElement);
     }
 
-    for (i = 0; i < 1024; i++) {
+    for (i = 0; i < 256; i++) {
         divGrid();
     }
 }
@@ -67,8 +67,8 @@ function resetAndAlign() {
                 divGrid();
             }
             divContainer.setAttribute(`style`,
-            `grid-template-columns: repeat(${userGridPrompt}, 1fr);
-            grid-template-rows: repeat(${userGridPrompt}, 1fr);` );
+            `grid-template-columns: repeat(${userGridPrompt}, 2fr);
+            grid-template-rows: repeat(${userGridPrompt}, 2fr);` );
             }      
         userMultiDivGrid(userGridPrompt);
         }
